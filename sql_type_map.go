@@ -1,11 +1,11 @@
 package sqltogo
 
 var sqlTypeMap = map[string]string{
-	"int":                "int",
-	"integer":            "int",
-	"tinyint":            "int8",
-	"smallint":           "int16",
-	"mediumint":          "int32",
+	"int":                "int64",
+	"integer":            "int64",
+	"tinyint":            "int64",
+	"smallint":           "int64",
+	"mediumint":          "int64",
 	"bigint":             "int64",
 	"int unsigned":       "uint",
 	"integer unsigned":   "uint",

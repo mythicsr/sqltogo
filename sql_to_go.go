@@ -56,8 +56,9 @@ func stmtToGo(stmt *sqlparser.DDL, tableName string, pkgName string) (string, er
 		if comment == nil {
 			builder.WriteString(fmt.Sprintf("\t%s\t%s\t\n", field, goType))
 		} else {
-			builder.WriteString(fmt.Sprintf("\t%s\t%s\t`comment:\"%s\"` \n",
-				field, goType, string(comment.Val)))
+			txt := fmt.Sprintf("\t%s\t%s\t`json:\"%s\" gorm:\"column:%s\"`//%s\n",
+				field, goType, col.Name, col.Name, string(comment.Val))
+			builder.WriteString(txt)
 		}
 	}
 	builder.WriteString("}\n")
