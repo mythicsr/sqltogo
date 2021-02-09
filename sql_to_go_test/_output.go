@@ -5,11 +5,11 @@ import (
 )
 
 type USER struct {
-	Id           uint      `comment:"primary key"`
-	IpAddress    int       `comment:"ip_address"`
-	Nickname     string    `comment:"user note"`
-	Description  string    `comment:"user description"`
-	CreatorEmail string    `comment:"creator email"`
-	CreatedAt    time.Time `comment:"create time"`
-	DeletedAt    time.Time `comment:"delete time"`
+	Id           int64     `json:"id" gorm:"column:id"`                       //primary key
+	IpAddress    int64     `json:"ip_address" gorm:"column:ip_address"`       //ip_address
+	Nickname     string    `json:"nickname" gorm:"column:nickname"`           //user note
+	Description  string    `json:"description" gorm:"column:description"`     //user description
+	CreatorEmail string    `json:"creator_email" gorm:"column:creator_email"` //creator email
+	CreatedAt    time.Time `json:"created_at" gorm:"column:created_at"`       //create time
+	DeletedAt    time.Time `json:"deleted_at" gorm:"column:deleted_at"`       //delete time
 }

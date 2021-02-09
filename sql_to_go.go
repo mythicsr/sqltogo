@@ -2,9 +2,8 @@ package sqltogo
 
 import (
 	"fmt"
-	"strings"
-
 	"github.com/xwb1989/sqlparser"
+	"strings"
 )
 
 // SqlToGo converts a sql create statement to Go struct
